@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var state: StateController
+    
     @State private var subjectChoice = ""
     @State private var enjoymentChoice = ""
     @State private var achievementChoice = ""
     @State private var paceChoice = ""
     @State private var badChoice = ""
     @State private var goodChoice = ""
-    let student = Student(subjects: ["Maths", "History"])
     var body: some View {
         VStack {
             Text("Comment Card Generator")
@@ -61,7 +62,9 @@ struct ContentView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            Button("Create Comment", action: student.createComment)
+            Button("Create Comment"){
+                state.currentComment.generateComment()
+            }
         }
     }
 }

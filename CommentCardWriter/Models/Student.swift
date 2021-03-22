@@ -8,14 +8,14 @@
 import Foundation
 
 class Student {
-    var subjects: [String]
-    var comments: [Comment] = []
+    var subjects: [String] = []
+    var comments: [Comment]
     
-    init(subjects: [String]) {
-        self.subjects = subjects
+    init(comments: [Comment]) {
+        self.comments = comments
     }
     
-    func createComment(){
+    func createComment(subject: String, enjoyment: Int, achievement: Int, pace: Int, goodAreas: [String], badAreas: [String]){
         
     }
 }
