@@ -8,7 +8,7 @@
 import Foundation
 
 class StateController: ObservableObject {
-    @Published var currentComment: Comment = Comment()
+//    @Published var currentComment: Comment
     @Published var student: Student = Student(comments: [])
     
     

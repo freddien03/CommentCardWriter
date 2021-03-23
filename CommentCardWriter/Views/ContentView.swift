@@ -62,9 +62,12 @@ struct ContentView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            Button("Create Comment"){
-                state.currentComment.generateComment()
+            Button("Create Comment") {
+                let goodChoiceList = goodChoice.components(separatedBy: " ")
+                let badChoiceList = badChoice.components(separatedBy: " ")
+                state.student.createComment(subject: subjectChoice, enjoyment: enjoymentChoice, achievement: achievementChoice, pace: paceChoice, goodAreas: goodChoiceList, badAreas: badChoiceList)
             }
+            Text("\(state.student.comments[0].commentStr)")
         }
     }
 }
